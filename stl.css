@@ -1,0 +1,39 @@
+body{
+    background-color: white;
+    color: black;
+    text-shadow: 15mm;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.ordinary{
+    text-decoration: none;
+    color:white;
+    padding:10px;
+    border-radius: 10%;
+    transition-duration: .5s;
+}
+.ordinary:hover{
+    background-color: #BE0000;
+    padding: 10px;
+    border-radius: 10%;
+    transition-duration: .5s;
+}
+#menu{
+    background-color: #8B0000;
+    padding:14px;
+}
+#owo{
+    color: #008B8B;
+    background-color: #8B0000;
+    border-radius: 10px;
+}
+#frick{
+    background-color: #8B0000;
+    padding:10px;
+    text-align: center;
+    margin: 20px;
+    border-radius: 10px;
+}
+#frick:hover{
+    color: #00BEBE;
+    background-color: #be0000;
+}
