@@ -10,31 +10,37 @@ ctx.strokeRect(0, 200, 100, 100);
 ctx.strokeRect(100, 200, 100, 100);
 ctx.strokeRect(200, 200, 100, 100);
 
+//This class shall be mostly reformulated, since it is implemented in the API
 class Board{
     constructor(){
         this.gboard = [[null, null, null],
                 [null, null, null],
                 [null, null, null]];
     }
+    //This function shall be removed, since it is implemented in the API
     check(){
         var winner = false;
         var champion = null;
         for(var i = 0; i < 3; i++){
-            if((this.gboard[i][0] == this.gboard[i][1]) && (this.gboard[i][0] == this.gboard[i][2]) &&(this.gboard[i][0] != null)){
+            if((this.gboard[i][0] == this.gboard[i][1])&&(this.gboard[i][0] == this.gboard[i][2])
+              &&(this.gboard[i][0] != null)){
                 winner = true;
                 champion = this.gboard[i][0];
             }
-            else if((this.gboard[0][i] == this.gboard[1][i])&&(this.gboard[0][i] == this.gboard[2][i])&&(this.gboard[0][i] != null)){
+            else if((this.gboard[0][i] == this.gboard[1][i])&&
+              (this.gboard[0][i] == this.gboard[2][i])&&(this.gboard[0][i] != null)){
                 winner = true;
                 champion = this.gboard[0][i];
             }
         }
         if(!(winner)){
-            if((this.gboard[0][0] == this.gboard[1][1])&&(this.gboard[0][0] == this.gboard[2][2])&&(this.gboard[0][0] != null)){
+            if((this.gboard[0][0] == this.gboard[1][1])&&
+              (this.gboard[0][0] == this.gboard[2][2])&&(this.gboard[0][0] != null)){
                 winner = true;
                 champion = this.gboard[0][0];
             }
-            else if((this.gboard[0][2] == this.gboard[1][1])&&(this.gboard[2][0] == this.gboard[0][2])&&(this.gboard[0][2] != null)){
+            else if((this.gboard[0][2] == this.gboard[1][1])&&
+              (this.gboard[2][0] == this.gboard[0][2])&&(this.gboard[0][2] != null)){
                 winner = true;
                 champion = this.gboard[0][2];
             }
@@ -53,14 +59,12 @@ class Board{
                     }
                 }
             }
-            if(!procceed){
+            if(!procceed) {
                 return false;
-            }
-            else{
+            } else {
                 return true;
             }
-        }
-        else{
+        } else {
             return results[1]
         }
     }
@@ -76,7 +80,6 @@ class Board{
 }
 var board = new Board();
 scr.addEventListener('mousedown',onDown,false);
-var menu = document.getElementById("menu");
 var who = "";
 function transform(c){
     if(c < 100){
@@ -104,7 +107,7 @@ function whos_next(alpha){
 
 function onDown(event){
     cx = event.pageX - (scr.offsetLeft + 8); //8 is there due to the minimum distance of the
-    cy = event.pageY - (scr.offsetTop + menu.offsetHeight + 18); //18 is there due to the header of the page, feel free to change it
+    cy = event.pageY - (scr.offsetTop + 18); //18 is there due to the header of the page, feel free to change it
     px = transform(cx);
     py = transform(cy);
     var played = window.board.play(px,py,who);

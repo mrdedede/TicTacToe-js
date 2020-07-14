@@ -1,0 +1,18 @@
+{
+  "roomcode": 0,
+  "board": [
+    [null, null, null],
+    [null, null, null],
+    [null, null, null]
+  ],
+  "player1": {
+    "playerName": "",
+    "isTurn": false
+  },
+  "player2": {
+    "playerName": "",
+    "isTurn": false
+  },
+  "ended": false,
+  "winner": null
+}
